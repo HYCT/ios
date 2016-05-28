@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	
+	<key>0</key>
+	<array>
+		
+		<array>
+			<string>我要借款</string>
+            <string>你可以享受7天的免息借款</string>
+			<string>finance_loan_cell_image</string>
+            <string>USFinanceLoanViewController</string>
+		</array>
+	</array>
+	<key>1</key>
+	<array>
+		
+        <array>
+            <string>我要存款</string>
+            <string>高达9%的年化收益</string>
+            <string>finance_save_cell_image</string>
+             <string>USAccountSaveViewController</string>
+        </array>
+	</array>
+    <key>2</key>
+    <array>
+        <array>
+            <string>我要还款</string>
+            <string>好借好还,再借不难</string>
+            <string>finance_back_cell_image</string>
+            <string>USFinanceRebackTableViewController</string>
+        </array>
+        
+       
+    </array>
+</dict>
+</plist>

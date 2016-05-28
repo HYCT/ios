@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0</key>
+	<array>
+		<array>
+			<string>提升额度</string>
+			<string>account_cell_increambalance_ico</string>
+            <string>USIncreateQuotaViewController</string>
+		</array>
+		
+	</array>
+	<key>1</key>
+	<array>
+		
+		<array>
+			<string>我的收益</string>
+			<string>account_cell_myincome_ico</string>
+            <string>USMyIncomeViewController</string>
+        </array>
+		
+	</array>
+    <key>2</key>
+    <array>
+        <array>
+            <string>邀请有奖</string>
+            <string>account_cell_share_ico</string>
+            <string>USAccountCallForViewController</string>
+        </array>
+        <array>
+            <string>交易记录</string>
+            <string>account_cell_inrecord_ico</string>
+        </array>
+        <array>
+            <string>校园一卡通充值记录</string>
+            <string>account_cell_card_ico</string>
+        </array>
+    </array>
+</dict>
+</plist>

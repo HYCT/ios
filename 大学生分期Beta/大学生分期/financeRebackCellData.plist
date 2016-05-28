@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	
+	<key>0</key>
+	<array>
+		
+		<array>
+			<string>7日免手续费还款</string>
+            <string>finance_reback_save_cell_image</string>
+            <string>USRebackListViewController</string>
+		</array>
+        <array>
+            <string>近7日待还</string>
+            <string>finance_reback_7_cell_image</string>
+            <string>USRebackListViewController</string>
+        </array>
+        <array>
+            <string>全部待还</string>
+            <string>finance_reback_all_cell_image</string>
+            <string>USRebackListViewController</string>
+        </array>
+	</array>
+</dict>
+</plist>

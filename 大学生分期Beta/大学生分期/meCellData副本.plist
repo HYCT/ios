@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0</key>
+	<array>
+		<array>
+			<string>消息通知</string>
+			<string>more_cell_mesage_ico</string>
+			<string>USMoreMessageViewController</string>
+		</array>
+		<array>
+			<string>招呼信息</string>
+			<string>more_cell_safasetting_ico</string>
+			<string>USSayHelloViewController</string>
+		</array>
+	</array>
+	<key>1</key>
+	<array>
+		<array>
+			<string>帮助中心</string>
+			<string>more_cell_help_ico</string>
+			<string>USHelpCenterViewController</string>
+		</array>
+		<array>
+			<string>安全保障</string>
+			<string>more_cell_safety_ico</string>
+			<string>USMoreSafetyViewController</string>
+		</array>
+		<array>
+			<string>关于我们</string>
+			<string>more_cell_aboutus_ico</string>
+			<string>USMoreAboutUsViewController</string>
+		</array>
+	</array>
+	<key>2</key>
+	<array>
+		<array>
+			<string>系统设置</string>
+			<string>more_cell_safasetting_ico</string>
+			<string>USMoreSystemSettingViewController</string>
+		</array>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4</key>
+	<array>
+		<array>
+			<string>实名认证</string>
+			<string>account_cell_share_ico</string>
+			<string>USCertificationViewController</string>
+		</array>
+	</array>
+	<key>3</key>
+	<array>
+		<array>
+			<string>我的优惠券</string>
+			<string>account_cell_increambalance_ico</string>
+			<string>USMyTicketViewController</string>
+		</array>
+	</array>
+	<key>0</key>
+	<array>
+		<array>
+			<string>提升额度</string>
+			<string>account_cell_increambalance_ico</string>
+			<string>USIncreateQuotaViewController</string>
+		</array>
+	</array>
+	<key>1</key>
+	<array>
+		<array>
+			<string>我的银行卡</string>
+			<string>account_cell_myincome_ico</string>
+			<string>USBankCardListViewController</string>
+		</array>
+	</array>
+	<key>2</key>
+	<array>
+		<array>
+			<string>邀请有奖</string>
+			<string>account_cell_share_ico</string>
+			<string>USAccountCallForViewController</string>
+		</array>
+	</array>
+</dict>
+</plist>

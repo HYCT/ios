@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5927;&#x5b66;&#x751f;&#x5206;&#x671f;/Classes/Home/Controller/USFinanceRebackTableViewController.m"
+            timestampString = "463499025.401879"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5927;&#x5b66;&#x751f;&#x5206;&#x671f;/Classes/Account/View/USRebackTableViewCell.h"
+            timestampString = "469902302.770288"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "@protocol USRebackTableViewCellDelegate"
+            landmarkType = "2">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[USRebackTableViewCell leftView]"
+                  moduleName = "&#x5927;&#x5b66;&#x751f;&#x5206;&#x671f;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hexianshan/Documents/oc/universityStages/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%86%E6%9C%9F/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%86%E6%9C%9F/Classes/Account/View/USRebackTableViewCell.h"
+                  timestampString = "464894653.472459"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[USRebackTableViewCell setLeftView:]"
+                  moduleName = "&#x5927;&#x5b66;&#x751f;&#x5206;&#x671f;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hexianshan/Documents/oc/universityStages/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%86%E6%9C%9F/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%86%E6%9C%9F/Classes/Account/View/USRebackTableViewCell.h"
+                  timestampString = "464894653.472753"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5927;&#x5b66;&#x751f;&#x5206;&#x671f;/Classes/Main/Tools/USWebTool.m"
+            timestampString = "474042308.726982"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "406"
+            endingLineNumber = "406">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5927;&#x5b66;&#x751f;&#x5206;&#x671f;/Classes/Account/Controller/USIncreateQuotaViewController.m"
+            timestampString = "469964063.867957"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "-test"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

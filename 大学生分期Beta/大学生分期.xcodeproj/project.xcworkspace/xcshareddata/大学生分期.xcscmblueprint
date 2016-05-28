@@ -1,0 +1,68 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "713eb100-51e6-bb44-9621-87f7fa31b53a++2269",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "e7bb88f7-cdab-ed46-8536-be57e2ecac5e++359" : {
+
+    },
+    "fcca3d7b-703f-844f-bcb4-95d5513836ba++9892" : {
+      "DVTSourceControlWorkingCopyRepositoryBranchesLocationKey" : "branches",
+      "DVTSourceControlWorkingCopyRepositoryTagsLocationKey" : "tags",
+      "DVTSourceControlWorkingCopyRepositoryPrimaryBranchLocationKey" : "trunk"
+    },
+    "713eb100-51e6-bb44-9621-87f7fa31b53a++2269" : {
+      "DVTSourceControlWorkingCopyRepositoryBranchesLocationKey" : "branches",
+      "DVTSourceControlWorkingCopyRepositoryTagsLocationKey" : "tags",
+      "DVTSourceControlWorkingCopyRepositoryPrimaryBranchLocationKey" : "trunk"
+    },
+    "eb80795f-2191-de4b-bff6-2b304d2b507b++5690" : {
+      "DVTSourceControlWorkingCopyRepositoryBranchesLocationKey" : "branches",
+      "DVTSourceControlWorkingCopyRepositoryTagsLocationKey" : "tags",
+      "DVTSourceControlWorkingCopyRepositoryPrimaryBranchLocationKey" : "trunk"
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "f385288b-3cda-a749-b6da-cf70f252d032" : 0,
+    "e7bb88f7-cdab-ed46-8536-be57e2ecac5e++359" : 0,
+    "fcca3d7b-703f-844f-bcb4-95d5513836ba++9892" : 0,
+    "713eb100-51e6-bb44-9621-87f7fa31b53a++2269" : 0,
+    "eb80795f-2191-de4b-bff6-2b304d2b507b++5690" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "82D71C66-E2A5-40B0-9001-88059D0CB55E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "f385288b-3cda-a749-b6da-cf70f252d032" : "universityStages",
+    "e7bb88f7-cdab-ed46-8536-be57e2ecac5e++359" : "universityStages_new\/",
+    "fcca3d7b-703f-844f-bcb4-95d5513836ba++9892" : "universityStages_new_v1\/",
+    "713eb100-51e6-bb44-9621-87f7fa31b53a++2269" : "wangka\/",
+    "eb80795f-2191-de4b-bff6-2b304d2b507b++5690" : "universityStages_new_v2\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "大学生分期",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "大学生分期\/大学生分期.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/222.221.8.91:443\/svn\/wangka",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "713eb100-51e6-bb44-9621-87f7fa31b53a++2269"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/222.221.8.91:443\/svn\/universityStages_new",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "e7bb88f7-cdab-ed46-8536-be57e2ecac5e++359"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/222.221.8.91:443\/svn\/universityStages_new_v2",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "eb80795f-2191-de4b-bff6-2b304d2b507b++5690"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/222.221.8.91:443\/svn\/universityStages",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "f385288b-3cda-a749-b6da-cf70f252d032"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/222.221.8.91:443\/svn\/universityStages_new_v1.0",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "fcca3d7b-703f-844f-bcb4-95d5513836ba++9892"
+    }
+  ]
+}

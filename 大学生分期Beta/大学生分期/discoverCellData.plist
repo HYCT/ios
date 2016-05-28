@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0</key>
+	<array>
+		<array>
+			<string>活动</string>
+			<string>discover_cell_product_ico</string>
+			<string>USActivityViewController</string>
+		</array>
+		<array>
+			<string>游戏</string>
+			<string>discover_cell_active_ico</string>
+			<string>USGameViewController</string>
+		</array>
+	</array>
+	<key>1</key>
+	<array>
+		<array>
+			<string>黑名单</string>
+			<string>discover_cell_blacklist_ico</string>
+			<string>USBlackNameListViewController</string>
+		</array>
+	</array>
+</dict>
+</plist>
