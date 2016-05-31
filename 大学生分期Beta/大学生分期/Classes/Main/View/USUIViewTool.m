@@ -11,7 +11,7 @@
 #import "USMainUITabBarController.h"
 @implementation USUIViewTool
 +(void)createMainNavController:(UIViewController *)showVC{
-     USMainUITabBarController *mainCV = [[USMainUITabBarController alloc]init];
+    USMainUITabBarController *mainCV = [[USMainUITabBarController alloc]init];
     if (showVC==nil) {
         mainCV.selectedViewController = mainCV.accountnNavViewController;
         [USUIViewTool chageWindowRootController:mainCV];
@@ -29,7 +29,7 @@
 }
 +(void)chageWindowRootController:(UIViewController *)rootViewController{
     if (rootViewController!=nil) {
-         [[UIApplication sharedApplication].delegate window].rootViewController = rootViewController;
+        [[UIApplication sharedApplication].delegate window].rootViewController = rootViewController;
     }
 }
 +(void)toLoginViewController{
@@ -63,6 +63,22 @@
     [button setTitle:title forState:UIControlStateHighlighted];
     return button;
 }
+
+/**
+ 下拉按钮
+ **/
++(UIButton *)createButtonWithRightImg:(NSString*)title imageName:(NSString*)imageNmae width:(CGFloat ) width{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button.titleLabel setTextAlignment:NSTextAlignmentCenter];
+    [button.titleLabel setFont:[UIFont systemFontOfSize:kCommonButtonTitleSize]];
+    [button setImage:[UIImage imageNamed:imageNmae] forState:UIControlStateNormal] ;
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitle:title forState:UIControlStateHighlighted];
+    [button setWidth:width] ;
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0, width-11, 0, 0)];
+    return button;
+}
+
 +(UIButton *)createButtonWith:(NSString*)title imageName:(NSString*)imageNmae{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button.titleLabel setTextAlignment:NSTextAlignmentCenter];
@@ -122,7 +138,7 @@
     return label;
 }
 +(NSAttributedString *)createAttrbutedStringWithHtml:(NSString *)htmlString{
-   NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
     return attributedString;
 }
 +(UILabel*)createUILabelWithTitle:(NSString *)title fontSize:(CGFloat)size color:(UIColor *)color heigth:(CGFloat)heigth{
@@ -168,16 +184,16 @@
     label.textAlignment = NSTextAlignmentCenter;
     [tipBigViw addSubview:label];
     /**
-    UIButton *loadDataBt = [USUIViewTool createButtonWith:@"刷新"];
-    loadDataBt.frame = CGRectMake(kAppWidth*0.5-kAppWidth*0.35*0.5, label.y+label.height+5, kAppWidth*0.35, 30);
-    loadDataBt.titleLabel.font = [UIFont systemFontOfSize:kCommonFontSize_15];
-    loadDataBt.layer.cornerRadius = loadDataBt.height*0.5;
-    loadDataBt.layer.masksToBounds = YES;
-    [loadDataBt setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [loadDataBt setTitleColor:[UIColor orangeColor] forState:UIControlStateHighlighted];
-    loadDataBt.backgroundColor = [UIColor blueColor];
-    [loadDataBt addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    [tipBigViw addSubview:loadDataBt];
+     UIButton *loadDataBt = [USUIViewTool createButtonWith:@"刷新"];
+     loadDataBt.frame = CGRectMake(kAppWidth*0.5-kAppWidth*0.35*0.5, label.y+label.height+5, kAppWidth*0.35, 30);
+     loadDataBt.titleLabel.font = [UIFont systemFontOfSize:kCommonFontSize_15];
+     loadDataBt.layer.cornerRadius = loadDataBt.height*0.5;
+     loadDataBt.layer.masksToBounds = YES;
+     [loadDataBt setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+     [loadDataBt setTitleColor:[UIColor orangeColor] forState:UIControlStateHighlighted];
+     loadDataBt.backgroundColor = [UIColor blueColor];
+     [loadDataBt addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+     [tipBigViw addSubview:loadDataBt];
      **/
     return tipBigViw;
 }
@@ -190,12 +206,12 @@
     //imageview.autoresizingMask =
     //UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     //imageview.autoresizingMask =
-     //UIViewAutoresizingFlexibleWidth ;
+    //UIViewAutoresizingFlexibleWidth ;
 }
 //text自适应高度
 
 +(CGFloat )setTextHeight:(UILabel *)label width:(CGFloat)width content:(NSString *)content font:(UIFont *)font {
-   // content = @"网上都好低分季度加肥加大烦烦的单击封ID及非积分抵扣积分积分积分地方地的地方ID疯狂的口水就非法建设两架飞机的发动机及覅额覅你房低价房地非法金额非福建地方地方IDEif都快放假的覅对方及诶放假了十分噢噢你发送的覅而非那是浪费你的负担法搜喂奶粉";
+    // content = @"网上都好低分季度加肥加大烦烦的单击封ID及非积分抵扣积分积分积分地方地的地方ID疯狂的口水就非法建设两架飞机的发动机及覅额覅你房低价房地非法金额非福建地方地方IDEif都快放假的覅对方及诶放假了十分噢噢你发送的覅而非那是浪费你的负担法搜喂奶粉";
     label.text = content;
     [label setNumberOfLines:0];
     [label setFont:font] ;
@@ -206,5 +222,5 @@
     [label setHeight:expectSize.height] ;
     return expectSize.height ;
 }
- 
+
 @end

@@ -33,13 +33,13 @@
         _bankNameLB = [self createUILabelWithTitle:@"中国建设银行" fontSize:kCommonFontSize_15 color: [UIColor whiteColor] heigth:kCommonFontSize_15];
         [view addSubview:_bankNameLB];
         //
-        _cardTypeLB = [self createUILabelWithTitle:@"借记卡" fontSize:kCommonFontSize_15*0.75 color: [UIColor blackColor] heigth:kCommonFontSize_15*0.75];
+        _cardTypeLB = [self createUILabelWithTitle:@"储蓄卡" fontSize:kCommonFontSize_15*0.75 color: [UIColor blackColor] heigth:kCommonFontSize_15*0.75];
         _cardTypeLB.y = _bankNameLB.y+_bankNameLB.height+kMargin;
         [view addSubview:_cardTypeLB];
         //
-        _cardIdLB = [self createUILabelWithTitle:@"**** **** **** 8863" fontSize:kCommonFontSize_29 color: [UIColor whiteColor] heigth:kCommonFontSize_30];
+        _cardIdLB = [self createUILabelWithTitle:@"**** **** **** 8863" fontSize:kCommonFontSize_20 color: [UIColor whiteColor] heigth:kCommonFontSize_20];
         _cardIdLB.y = _cardTypeLB.y+_cardTypeLB.height+kMargin+kDeta;
-        _cardIdLB.textAlignment = NSTextAlignmentRight;
+        _cardIdLB.textAlignment = NSTextAlignmentLeft;
         
         [view addSubview:_cardIdLB];
         //
@@ -62,7 +62,7 @@
 -(void)setDateWithDic:(NSDictionary *)data{
     _bankNameLB.text = data[@"bank_name"];
 #warning 银行卡类型没有
-    _cardTypeLB.text = @"借记卡";
+    _cardTypeLB.text = @"储蓄卡";
     _cardIdLB.text = [USStringTool getBankCardNoString:data[@"card_num"]];
     _cardManLB.text = data[@"name"];
 }

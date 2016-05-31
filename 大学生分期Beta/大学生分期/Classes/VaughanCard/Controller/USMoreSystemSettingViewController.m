@@ -29,7 +29,7 @@
     //_succesMegs = @[@"当前已是最新版...",@"清除缓存成功...",@"接收消息成功..."];
     //_titles = @[@"检查更新",@"清除缓存"];
     //_succesMegs = @[@"当前已是最新版...",@"清除缓存成功..."];
-    _titles = @[@"清除缓存1"];
+    _titles = @[@"清除缓存"];
     _succesMegs = @[@"清除缓存成功..."];
     
 }
@@ -75,8 +75,8 @@
     switch (indexPath.row) {
         case 0:
         {
-           progressView = [MBProgressHUD showMessage:@"正在检查版本信息..."];
-            time = 6;
+           progressView = [MBProgressHUD showMessage:@"正在清楚缓存..."];
+            time = 4;
         }
             break;
         case 1:

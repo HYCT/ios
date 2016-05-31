@@ -26,13 +26,14 @@
 @property(nonatomic,copy)NSString *telephone;
 @property(nonatomic,assign)NSInteger wang_bi;
 @property(nonatomic,assign)NSInteger realnametype;
+//判断是否有汇付账号
+@property(nonatomic,assign)NSInteger ishashuifu_account ;
 @property(nonatomic,assign)NSInteger isbindbankcard;
 @property(nonatomic,assign)CGFloat limitmoney;
 @property(nonatomic,assign)CGFloat surplusmoney;
 @property(nonatomic,copy)UIImage *headerImg;
 @property(nonatomic,copy)UIImage *invitcodeImg;
 @property(nonatomic,copy)UIImage *personnerpicImg;
-
 -(NSString *)strSurplusmoney;
 -(NSString *)strLimitmoney;
 +(id)accountWithDic:(NSDictionary *)dic;

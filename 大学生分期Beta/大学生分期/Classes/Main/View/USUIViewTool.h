@@ -16,6 +16,7 @@
 +(UIView *)createLineView;
 +(UIView *)createLineView:(CGFloat)x y:(CGFloat)y width:(CGFloat)width;
 +(UIButton *)createButtonWith:(NSString*)title imageName:(NSString*)imageNmae;
++(UIButton *)createButtonWithRightImg:(NSString*)title imageName:(NSString*)imageNmae width:(CGFloat ) width;
 +(UILabel *)createUILabel;
 +(UIButton *)createButtonWith:(NSString*)title;
 +(UIButton *)createButtonWith:(NSString*)title imageName:(NSString*)imageNmae highImageName:(NSString*)highImageName;+(UIButton *)createButtonWith:(NSString*)title imageName:(NSString*)imageNmae highImageName:(NSString*)highImageName disableImageName:(NSString*)disableImageName;

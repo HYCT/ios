@@ -42,6 +42,8 @@
         result.surplusmoney  = [dic[@"surplusmoney"] doubleValue];
         result.isbindbankcard = [dic[@"isbindbankcard"] integerValue];
         result.limitmoney = [dic[@"limitmoney"] doubleValue];
+        //汇付账号
+        result.ishashuifu_account =[dic[@"ishashuifu_account"] integerValue] ;
         if (result.headpic!= nil&&result.headpic.length>1) {
             NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:HYWebDataPath(result.headpic)]];
             result.headerImg = [UIImage imageWithData:imgData];
@@ -69,6 +71,7 @@
     _headerImg  = [aDecoder decodeObjectForKey:@"headerImg"];
     _headpic = [aDecoder decodeObjectForKey:@"headpic"];
     _realnametype = [aDecoder decodeIntegerForKey:@"realnametype"];
+    _ishashuifu_account =[aDecoder decodeIntegerForKey:@"ishashuifu_account"] ;
     _surplusmoney = [aDecoder decodeDoubleForKey:@"surplusmoney"];
     _isbindbankcard = [aDecoder decodeIntegerForKey:@"isbindbankcard"];
     _limitmoney = [aDecoder decodeDoubleForKey:@"limitmoney"];
@@ -91,6 +94,7 @@
     [aCoder encodeObject:_personnerpic forKey:@"personnerpic"];
     [aCoder encodeObject:_headerImg forKey:@"headerImg"];
     [aCoder encodeInteger:_realnametype  forKey:@"realnametype"];
+    [aCoder encodeInteger:_ishashuifu_account  forKey:@"ishashuifu_account"];
     [aCoder encodeDouble:_surplusmoney forKey:@"surplusmoney"];
     [aCoder encodeDouble:_limitmoney forKey:@"limitmoney"];
     [aCoder encodeInteger:_isbindbankcard forKey:@"isbindbankcard"];
@@ -103,6 +107,6 @@
     return [NSString stringWithFormat:@"%.02f",_surplusmoney*1.00];
 }
 -(NSString *)strLimitmoney{
-   return [NSString stringWithFormat:@"%.02f",_limitmoney*1.00];
+    return [NSString stringWithFormat:@"%.02f",_limitmoney*1.00];
 }
 @end

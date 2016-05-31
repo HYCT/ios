@@ -7,6 +7,7 @@
 //
 
 #import "USBankCardListViewController.h"
+#import "USBindBankHuifuAccountViewController.h"
 #import "USBindBankCardViewController.h"
 #import "USBankCardCell.h"
 
@@ -18,6 +19,9 @@
 @implementation USBankCardListViewController
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
+    
+    
     self.title = @"添加银行卡";
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationController.navigationBar.translucent= NO;
@@ -31,7 +35,7 @@
     self.tableView.y = 15;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.x = 10;
- 
+    
     UIView *footer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 40, 240)];
     [footer setBackgroundColor:HYCTColor(240, 241, 240)];
     //
@@ -60,16 +64,32 @@
     self.tableView.scrollsToTop = YES;
     [self.view addSubview:self.tableView];
 }
+
 -(void)addCard{
-    USBindBankCardViewController *toCV = [[USBindBankCardViewController alloc]init];
-    toCV.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:toCV animated:YES];
+    NSInteger realnameType = _account.realnametype ;
+    if (realnameType < 3 ) {
+        [MBProgressHUD showError:@"抱歉，你的实名认证还没有通过审核！"];
+        return ;
+    }else{
+        NSInteger huifu_account = _account.ishashuifu_account ;
+        //跳转到开户页面
+        if (huifu_account == 0 ) {
+            USBindBankHuifuAccountViewController *toCV = [[USBindBankHuifuAccountViewController alloc]init];
+            toCV.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:toCV animated:YES];
+        }else{
+            USBindBankCardViewController *toCV = [[USBindBankCardViewController alloc]init];
+            toCV.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:toCV animated:YES];
+        }
+    }
+    
 }
 -(void)loadBankCardlist{
     
     [USWebTool POST:@"bindbankcardcilent/bindBankCardlist.action" showMsg:@"正在玩命获取你绑定的银行卡..." paramDic:@{@"customer_id":_account.id} success:^(NSDictionary *dic) {
         _bankCardList = dic[@"data"];
-         [_tableView reloadData];
+        [_tableView reloadData];
     } failure:^(id data) {
         _bankCardList = nil;
         [_tableView reloadData];
