@@ -11,6 +11,8 @@
 #import "USCertificationViewController.h"
 #import "USUserService.h"
 #import "USAccount.h"
+#import "USCommonListController.h"
+#import "USHtmlLoadViewInsideController.h"
 #define kTopMargin 20
 #define kTipLeftMargin 25
 #define kTipRightMargin 10
@@ -29,7 +31,9 @@
 @property(nonatomic,strong) UIButton *accessoryView;
 @property(nonatomic,strong) USAccount *account;
 @property(nonatomic,strong) UITextField *provinceField;
+@property(nonatomic,strong) NSString *pro_code ;
 @property(nonatomic,strong) UITextField *areaidField;
+@property(nonatomic,strong) NSString *area_code ;
 
 @end
 @implementation USBindBankCardViewController
@@ -118,14 +122,15 @@
     //按钮选择
     UIButton *provinceBtn =  [USUIViewTool createButtonWithRightImg:@"" imageName:@"account_cell_down_arrow_ico" width:_provinceField.width];
     provinceBtn.frame = _provinceField.frame ;
+    [provinceBtn addTarget:self action:@selector(selectProvince:) forControlEvents:UIControlEventTouchUpInside] ;
     [bgview2 addSubview:provinceBtn];
     
-    _provinceField.width = _provinceField.width - 11 ;
+    _provinceField.width = _provinceField.width - 15 ;
     _provinceField.delegate = self;
     _provinceField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请选择" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:kCommonFontSize_15]}];
     _provinceField.textAlignment = NSTextAlignmentRight;
     _provinceField.enabled = NO;
-    [_provinceField setBackgroundColor:[UIColor greenColor]] ;
+    //[_provinceField setBackgroundColor:[UIColor greenColor]] ;
     [bgview2 addSubview:_provinceField];
     
     
@@ -142,15 +147,16 @@
     //按钮选择
     UIButton *areaBtn =  [USUIViewTool createButtonWithRightImg:@"" imageName:@"account_cell_down_arrow_ico" width:_areaidField.width];
     areaBtn.frame = _areaidField.frame ;
+    [areaBtn addTarget:self action:@selector(selectArea:) forControlEvents:UIControlEventTouchUpInside] ;
     [bgview2 addSubview:areaBtn];
-
-    _areaidField.width = _areaidField.width - 11 ;
+    
+    _areaidField.width = _areaidField.width - 15 ;
     _areaidField.delegate = self;
     _areaidField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请选择" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:kCommonFontSize_15]}];
     _areaidField.enabled = NO;
     _areaidField.textAlignment = NSTextAlignmentRight;
-    [_areaidField setBackgroundColor:[UIColor greenColor]] ;
-
+    //[_areaidField setBackgroundColor:[UIColor greenColor]] ;
+    
     [bgview2 addSubview:_areaidField];
     line = [self createLine:bgview2.height-1];
     [bgview2 addSubview:line];
@@ -161,7 +167,7 @@
     //
     UIButton *bindBtton = [USUIViewTool createButtonWith:@"绑  定" imageName:@"login_bt_img"];
     bindBtton.frame = CGRectMake(10, bgview2.y+ bgview2.height+kTopMargin, kAppWidth-20, 35);
-    //[bindBtton addTarget:self action:@selector(bind) forControlEvents:UIControlEventTouchUpInside];
+    [bindBtton addTarget:self action:@selector(bind) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview: bindBtton];
     _bindBtton = bindBtton;
 }
@@ -188,9 +194,49 @@
     label.textAlignment = NSTextAlignmentRight;
     return label;
 }
+
+/**
+ 选择省
+ **/
+-(void) selectProvince:(UIButton *)btn{
+    [USWebTool POSTWIthTip:@"bindbankcardcilent/getBindProvinceList.action" showMsg:@"正在查询..." paramDic:nil success:^(NSDictionary * dic) {
+        USCommonListController *controller = [[USCommonListController alloc]init] ;
+        controller.dataList = dic[@"data"] ;
+        controller.mytitle =@"选择省份";
+        controller.ListCommonDelegate = self ;
+        controller.type =@"0" ;
+        [self.navigationController pushViewController:controller animated:YES];
+        
+    } failure:^(NSDictionary * dic) {
+        
+    }];
+    
+}
+
+/**
+ 选择区域
+ **/
+-(void) selectArea:(UIButton *)btn{
+    if ([_pro_code isEqualToString:@""]|| _pro_code == nil) {
+        [MBProgressHUD showError:@"请先选择省份！"];
+        return;
+    }
+    NSDictionary *params = @{@"city_code":_pro_code};
+    [USWebTool POSTWIthTip:@"bindbankcardcilent/getBindAreaList.action" showMsg:@"正在查询..." paramDic:params success:^(NSDictionary * dic) {
+        USCommonListController *controller = [[USCommonListController alloc]init] ;
+        controller.dataList = dic[@"data"] ;
+        controller.mytitle =@"选择地区";
+        controller.ListCommonDelegate = self ;
+        controller.type =@"1" ;
+        [self.navigationController pushViewController:controller animated:YES];
+        
+    } failure:^(NSDictionary * dic) {
+        
+    }];
+}
+
+
 -(void)bind{
-    
-    
     if ([_bankArray count]==0) {
         [MBProgressHUD showError:@"请选择银行后填写卡号..."];
         return;
@@ -199,24 +245,47 @@
         [MBProgressHUD showError:@"请填写合法银行卡号..."];
         return;
     }
+    NSString *telephone=_telephoneField.text ;
     
-    NSDictionary *params = @{@"name":@"",
-                             @"bank_name":_bankArray[_currentIndex][@"name"],
-                             @"idcard":@"",
-                             @"bank_code":_bankArray[_currentIndex][@"code"],
-                             @"card_num":_bankNumField.text,
-                             @"customer_id":_account.id
-                             };
-    [USWebTool POST:@"bindbankcardcilent/saveCustomerBindBank.action" showMsg:@"正在绑定银行卡..." paramDic:params success:^(NSDictionary * dic) {
-        _account.isbindbankcard = 1;
-        [USUserService saveAccount:_account];
-        
-        [self.navigationController popViewControllerAnimated:YES];
-        [MBProgressHUD showSuccess:@"绑定银行卡成功..."];
-    }];
+    if ([telephone isEqualToString:@""] || nil == telephone) {
+        [MBProgressHUD showError:@"请填写电话号码！"];
+        return;
+    }
+    
+    
+    if ([_pro_code isEqualToString:@"" ]|| nil == _pro_code) {
+        [MBProgressHUD showError:@"请选择开户省份！"];
+        return;
+    }
+    
+    if ([_area_code isEqualToString:@"" ]|| nil == _area_code) {
+        [MBProgressHUD showError:@"请选择开户地区！"];
+        return;
+    }
+    
+    
+    USHtmlLoadViewInsideController *controller = [[USHtmlLoadViewInsideController alloc]init ] ;
+    controller.hidesBottomBarWhenPushed = YES ;
+    NSMutableString *urlStr = [NSMutableString stringWithString:@"huiFuPayClientController/BindCardForm.action?"];
+    [urlStr appendString:[NSString stringWithFormat:@"customer_id=%@&",_account.id]];
+    [urlStr appendString:[NSString stringWithFormat:@"card_no=%@&",_bankNumField.text]];
+    [urlStr appendString:[NSString stringWithFormat:@"bank_id=%@&",_bankArray[_currentIndex][@"code"]]];
+    [urlStr appendString:[NSString stringWithFormat:@"card_mobile=%@&",telephone]];
+    [urlStr appendString:[NSString stringWithFormat:@"card_prov=%@&",_pro_code]];
+    [urlStr appendString:[NSString stringWithFormat:@"card_area=%@&",_area_code]];
+    controller.htmlUrl = HYWebDataPath(urlStr) ;
+    controller.htmlTitle = @"银行卡绑定" ;
+    controller.loadMsg =@"正在加载......";
+    controller.showMsg=true ;
+    HYLog(@"htmlurl%@",HYWebDataPath(urlStr) ) ;
+    [self.navigationController pushViewController:controller animated:YES] ;
     
     
 }
+
+
+
+
 -(void)dissView{
     [super.topView removeFromSuperview];
     [self updateRespons];
@@ -313,4 +382,21 @@
     
     _currentIndex = row;
 }
+
+//共用list返回
+-(void)listClickReturn:(NSDictionary *)data type:(NSString *)type{
+    HYLog(@"listClickReturn:%@,type:%@",data,type) ;
+    if ([type isEqualToString:@"0"]) {
+        _pro_code = data[@"city_code"] ;
+        _provinceField.text=data[@"city_name"] ;
+        
+        _area_code = @"" ;
+        _areaidField.text = @"";
+    }
+    if ([type isEqualToString:@"1"]) {
+        _area_code = data[@"area_code"] ;
+        _areaidField.text = data[@"area_name"] ;
+    }
+}
+
 @end

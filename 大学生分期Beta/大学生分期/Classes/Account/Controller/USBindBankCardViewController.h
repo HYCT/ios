@@ -8,5 +8,6 @@
 
 #import "USBaseViewController.h"
 #import "USBaseAuthorViewController.h"
-@interface USBindBankCardViewController : USBaseAuthorViewController
+#import "USListCommonDelegate.h"
+@interface USBindBankCardViewController : USBaseAuthorViewController<USListCommonDelegate>
 @end

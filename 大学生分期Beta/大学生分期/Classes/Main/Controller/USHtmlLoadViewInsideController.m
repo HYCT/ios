@@ -26,7 +26,7 @@
     
     
     
-   // self.view.y =50 ;
+    // self.view.y =50 ;
     UIWebView  *webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
     //webView.y =self.view.y+60;
     webView.y =self.view.y+65;
@@ -74,8 +74,8 @@
 -(void)webViewDidStartLoad:(UIWebView *)webView{
     
     if (_showMsg) {
-       
-      _mssageView =  [MBProgressHUD showMessage:_loadMsg toView:[[self.view subviews] firstObject]];
+        
+        _mssageView =  [MBProgressHUD showMessage:_loadMsg toView:[[self.view subviews] firstObject]];
         _mssageView.userInteractionEnabled = YES;
     }
 }
@@ -88,7 +88,7 @@
     NSURL *requestURL = [request URL];
     if ( ( [ [ requestURL scheme ] isEqualToString: @"http" ] || [ [ requestURL scheme ] isEqualToString: @"https" ] || [ [ requestURL scheme ] isEqualToString: @"mailto" ])
         && ( navigationType == UIWebViewNavigationTypeLinkClicked ) ) {
-         [webView loadRequest:[NSURLRequest requestWithURL:requestURL]];
+        [webView loadRequest:[NSURLRequest requestWithURL:requestURL]];
         //return ![ [ UIApplication sharedApplication ] openURL: requestURL];
     }
     return YES;
@@ -96,12 +96,12 @@
 
 - (void)pop{
     if(_webView.canGoBack){
-      [_webView goBack] ;
+        [_webView goBack] ;
     }else{
-      [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     
-   
+    
 }
 
 @end
