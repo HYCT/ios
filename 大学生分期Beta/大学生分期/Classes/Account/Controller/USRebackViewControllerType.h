@@ -9,11 +9,12 @@
 #import "USBaseViewController.h"
 #import "USRebackTableViewCell.h"
 #import "USBaseAuthorViewController.h"
+#import "USBankCardListCommonDelegate.h"
 
 @protocol RebackTicketDelegate<NSObject>
 -(void) didTicketClick:(NSDictionary *)data;
 @end
-@interface USRebackViewControllerType : USBaseAuthorViewController<RebackTicketDelegate>
+@interface USRebackViewControllerType : USBaseAuthorViewController<RebackTicketDelegate,USBankCardListCommonDelegate>
 @property(nonatomic,copy)NSString *rebackId;
 @property(nonatomic,assign)CGFloat money;
 @end

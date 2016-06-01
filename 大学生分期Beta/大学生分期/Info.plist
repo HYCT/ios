@@ -26,7 +26,7 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<true/>
+	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>

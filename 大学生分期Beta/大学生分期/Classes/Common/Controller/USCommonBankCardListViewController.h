@@ -7,7 +7,11 @@
 //
 
 #import "USBaseViewController.h"
+#import "USBankCardListCommonDelegate.h"
 @interface USCommonBankCardListViewController : USBaseViewController<UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate,UIAlertViewDelegate>
 @property(nonatomic,strong)UITableView *tableView;
+//点击协议
+@property(weak,nonatomic)id<USBankCardListCommonDelegate> bankCardListCommonDelegate ;
+
 @end
 

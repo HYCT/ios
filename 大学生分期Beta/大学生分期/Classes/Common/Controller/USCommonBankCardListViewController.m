@@ -14,6 +14,7 @@
 @interface USCommonBankCardListViewController()
 @property(nonatomic,strong)NSArray *bankCardList;
 @property(nonatomic,strong)USAccount *account;
+@property(nonatomic,strong)NSString *type ;
 @end
 @implementation USCommonBankCardListViewController
 -(void)viewDidLoad{
@@ -38,6 +39,8 @@
     
     
     [self.view addSubview:self.tableView];
+    
+    [self loadBankCardlist] ;
 }
 
 -(void)loadBankCardlist{
@@ -68,73 +71,10 @@
         cell = [[USBankCardCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     }
     [cell setDateWithDic:_bankCardList[indexPath.section]];
-    
-    //实例化长按手势监听
-    UILongPressGestureRecognizer *longPress =
-    [[UILongPressGestureRecognizer alloc] initWithTarget:self
-                                                  action:@selector(handleTableviewCellLongPressed:)];
-    //代理
-    longPress.delegate = self;
-    longPress.minimumPressDuration = 1.0;
-    //将长按手势添加到需要实现长按操作的视图里
-    [cell addGestureRecognizer:longPress];
-    //[longPress release];
-    //[cell release];
     return cell;
 }
 
-//长按事件的实现方法
-- (void) handleTableviewCellLongPressed:(UILongPressGestureRecognizer *)gestureRecognizer {
-    //开始长按事件
-    if (gestureRecognizer.state ==
-        UIGestureRecognizerStateBegan) {
-        NSLog(@"UIGestureRecognizerStateBegan");
-        
-    }
-    if (gestureRecognizer.state ==
-        UIGestureRecognizerStateChanged) {
-        NSLog(@"UIGestureRecognizerStateChanged");
-    }
-    
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        NSLog(@"UIGestureRecognizerStateEnded");
-        
-    }
-    
-}
 
-//点击某一行时候触发的事件
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([tableView isEqual:_tableView]) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"确定要删除该银行卡吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-        alertView.delegate = self;
-        [alertView show];
-    }
-}
-
-//alertview代理
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex==1) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        long index = indexPath.section ;
-        //NSLog(@"index %ld",index) ;
-        NSDictionary *row = _bankCardList[index];
-        //NSLog(@"index %@",row[@"id"]) ;
-        //NSString *rowid = @"ssssss";
-        NSString *rowid = row[@"id"] ;
-        [USWebTool POSTWIthTip:@"bindbankcardcilent/deleteCustomerBindBank.action" showMsg:@"正在删除银行卡..." paramDic:@{@"id":rowid} success:^(NSDictionary *dic) {
-            //重新设置用户
-            [USUserService saveAccount:[USAccount accountWithDic:dic[@"data"]]];
-            //重新加载银行卡
-            [self loadBankCardlist] ;
-            //_bankCardList = dic[@"data"];
-            //[_tableView reloadData];
-        } failure:^(id data) {
-            
-        }];
-        
-    }
-}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
@@ -146,8 +86,16 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return  120;
 }
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [NSThread detachNewThreadSelector:@selector(loadBankCardlist) toTarget:self withObject:nil];
+
+
+//当击行
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *data = _bankCardList[indexPath.row];
+     [self.navigationController popViewControllerAnimated:YES] ;
+    if (_bankCardListCommonDelegate != nil) {
+        [ _bankCardListCommonDelegate BankCardListClickReturn:data type:_type] ;
+    }
+   
 }
+
 @end

@@ -113,11 +113,12 @@
 //当击行
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *data = _dataList[indexPath.row];
+    [self.navigationController popViewControllerAnimated:YES] ;
     HYLog(@"%@",data) ;
     if (_ListCommonDelegate !=nil) {
         [_ListCommonDelegate listClickReturn:data type:_type] ;
-        [self.navigationController popViewControllerAnimated:YES] ;
     }
+    
     
 }
 

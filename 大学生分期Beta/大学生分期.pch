@@ -79,7 +79,7 @@
 #define kCellFontColor HYCTColor(102, 102, 102)
 //链接i地址
 //#define HYWebDataPath(path) [NSString stringWithFormat:@"http://%@",[NSString pathWithComponents:@[@"admin.mywoka.com/stages",path]]]
-#define HYWebDataPath(path) [NSString stringWithFormat:@"http://%@",[NSString pathWithComponents:@[@"192.168.1.10:8010/stages",path]]]
+#define HYWebDataPath(path) [NSString stringWithFormat:@"http://%@",[NSString pathWithComponents:@[@"192.168.1.113:8010/stages",path]]]
 #define kHuiChaoUrl HYWebDataPath(@"huichaoPayController/huichaoPay.action?")
 #define kMerchantUrl @"http://www.wowcard.cn/store/shoploading.html"
 #define kWangkaRigsterAgreement @"http://www.wowcard.cn/userfile_wangka.html?type=1"

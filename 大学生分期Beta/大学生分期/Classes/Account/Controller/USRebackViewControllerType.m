@@ -11,6 +11,7 @@
 #import "USBankCardListViewController.h"
 #import "USMyTicketViewController.h"
 #import "USCommonBankCardListViewController.h"
+#import "USRebackMsgCodeViewController.h"
 #define kMargin 5
 #define kBase 10
 @interface USRebackViewControllerType()
@@ -38,6 +39,8 @@
 @property(nonatomic,strong)NSDictionary * ticketData ;
 
 @property(nonatomic,assign)CGFloat height ;
+
+@property(nonatomic,strong)UIAlertView *inputAlertView;
 
 
 @end
@@ -271,11 +274,56 @@
 }
 
 
+
+
+
+
+
 /**
  的还款
  **/
 
 -(void)reback:(UIButton *)sender{
+    [self didLoan] ;
+}
+
+
+/**
+ 验证密码
+ **/
+-(void)didLoan{
+    _inputAlertView = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                 message:@"请输入密码"
+                                                delegate:self
+                                       cancelButtonTitle:@"取消"
+                                       otherButtonTitles:@"确定", nil];
+    _inputAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
+    
+    [_inputAlertView show];
+    
+}
+/**
+ alertview 代理
+ **/
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == alertView.firstOtherButtonIndex) {
+        USAccount *account = [USUserService accountStatic] ;
+        UITextField *txt = [alertView textFieldAtIndex:0];
+        NSString *pwd = txt.text ;
+        [USWebTool POSTWIthTip:@"loginclient/validateCustomerPwdByid.action" showMsg:@"正在验证密码..." paramDic:@{@"customer_id":account.id,@"pwd":pwd} success:^(NSDictionary *dic) {
+            USCommonBankCardListViewController *controller = [[USCommonBankCardListViewController alloc]init];
+            controller.bankCardListCommonDelegate = self ;
+            [self.navigationController pushViewController:controller animated:YES] ;
+            
+        } failure:^(id data) {
+            [self didLoan] ;
+        }];
+    }
+}
+
+
+
+-(void)senderback:(UIButton *)senderback{
     //
     NSString *products=@"还款";
     NSMutableString *urlStr = [NSMutableString stringWithString:kHuiChaoUrl];
@@ -287,24 +335,6 @@
         [urlStr appendString:[NSString stringWithFormat:@"ticketId=%@",_ticketData[@"id"]]];
     }
     
-    USCommonBankCardListViewController *controller = [[USCommonBankCardListViewController alloc]init];
-    [self.navigationController pushViewController:controller animated:YES] ;
-    
-    
-}
-
--(void)senderback:(UIButton *)sender{
-    //
-    NSString *products=@"还款";
-    NSMutableString *urlStr = [NSMutableString stringWithString:kHuiChaoUrl];
-    [urlStr appendString:[NSString stringWithFormat:@"id=%@&",_rebackId]];
-    [urlStr appendString:[NSString stringWithFormat:@"repay_money=%@&",_cashLabel.text]];
-    [urlStr appendString:[NSString stringWithFormat:@"products=%@&",products]];
-    //加优惠券
-    if(_ticketData != nil){
-      [urlStr appendString:[NSString stringWithFormat:@"ticketId=%@",_ticketData[@"id"]]];
-    }
-        
     NSString *ulr = [(NSString *)urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:ulr]];
 }
@@ -358,6 +388,26 @@
     controller.rebackTicketDelegate = self ;
     [self.navigationController pushViewController:controller animated:YES] ;
     
+}
+
+
+/**
+ **选择银卡卡返回
+ **/
+-(void)BankCardListClickReturn:(NSDictionary *)data type:(NSString *)type{
+    HYLog(@"BankCardListClickReturn%@",data) ;
+    USRebackMsgCodeViewController *controller = [[USRebackMsgCodeViewController alloc]init] ;
+    controller.user_cust_id = data[@"user_cust_id"];
+    controller.card_mobile = data[@"card_mobile"] ;
+    controller.bindcard_id =data[@"id"] ;
+    controller.borrow_id=_rebackId ;
+    controller.repay_money =_cashLabel.text;
+    NSString *ticket_id = @"";
+    if(_ticketData != nil){
+          ticket_id=_ticketData[@"id"];
+    }
+    controller.ticket_id = ticket_id;
+    [self.navigationController pushViewController:controller animated:YES] ;
 }
 
 
