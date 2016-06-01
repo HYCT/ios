@@ -10,6 +10,7 @@
 #import "USRebackTableViewCell.h"
 #import "USBankCardListViewController.h"
 #import "USMyTicketViewController.h"
+#import "USCommonBankCardListViewController.h"
 #define kMargin 5
 #define kBase 10
 @interface USRebackViewControllerType()
@@ -275,6 +276,24 @@
  **/
 
 -(void)reback:(UIButton *)sender{
+    //
+    NSString *products=@"还款";
+    NSMutableString *urlStr = [NSMutableString stringWithString:kHuiChaoUrl];
+    [urlStr appendString:[NSString stringWithFormat:@"id=%@&",_rebackId]];
+    [urlStr appendString:[NSString stringWithFormat:@"repay_money=%@&",_cashLabel.text]];
+    [urlStr appendString:[NSString stringWithFormat:@"products=%@&",products]];
+    //加优惠券
+    if(_ticketData != nil){
+        [urlStr appendString:[NSString stringWithFormat:@"ticketId=%@",_ticketData[@"id"]]];
+    }
+    
+    USCommonBankCardListViewController *controller = [[USCommonBankCardListViewController alloc]init];
+    [self.navigationController pushViewController:controller animated:YES] ;
+    
+    
+}
+
+-(void)senderback:(UIButton *)sender{
     //
     NSString *products=@"还款";
     NSMutableString *urlStr = [NSMutableString stringWithString:kHuiChaoUrl];
