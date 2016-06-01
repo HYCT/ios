@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		040A4A451C8F4C41004BD8E0 /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 040A4A441C8F4C41004BD8E0 /* libBPush.a */; };
 		040A4A461C8F4C41004BD8E0 /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 040A4A441C8F4C41004BD8E0 /* libBPush.a */; };
+		043305B81CFC8C840090F7ED /* USBindBankHuifuAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043305B71CFC8C840090F7ED /* USBindBankHuifuAccountViewController.m */; };
+		043D1CF71CFD7308004063E2 /* USCommonListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043D1CF61CFD7308004063E2 /* USCommonListTableCell.m */; };
+		043D1CFA1CFD73E3004063E2 /* USCommonListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043D1CF91CFD73E3004063E2 /* USCommonListController.m */; };
+		044095661CFE73E500DC6ABC /* USCommonBankCardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044095651CFE73E500DC6ABC /* USCommonBankCardListViewController.m */; };
+		0440956A1CFE8A3200DC6ABC /* USRebackMsgCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044095691CFE8A3200DC6ABC /* USRebackMsgCodeViewController.m */; };
+		0440956D1CFEB28F00DC6ABC /* USDeleBindCardMsgCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440956C1CFEB28F00DC6ABC /* USDeleBindCardMsgCodeViewController.m */; };
 		0471FED61C833BD600E89EB2 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0471FED51C833BD500E89EB2 /* libz.1.1.3.tbd */; };
 		049445AC1CB8D3E900165EAD /* USHtmlLoadViewInsideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049445AB1CB8D3E900165EAD /* USHtmlLoadViewInsideController.m */; };
 		049F59C81CB9626A0095A028 /* discoverCellData副本.plist in Resources */ = {isa = PBXBuildFile; fileRef = 049F59C71CB9626A0095A028 /* discoverCellData副本.plist */; };
@@ -506,6 +512,19 @@
 /* Begin PBXFileReference section */
 		040A4A441C8F4C41004BD8E0 /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
 		040A4A471C8F4C54004BD8E0 /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
+		043305B61CFC8C840090F7ED /* USBindBankHuifuAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBindBankHuifuAccountViewController.h; sourceTree = "<group>"; };
+		043305B71CFC8C840090F7ED /* USBindBankHuifuAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USBindBankHuifuAccountViewController.m; sourceTree = "<group>"; };
+		043D1CF51CFD72FF004063E2 /* USCommonListTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USCommonListTableCell.h; sourceTree = "<group>"; };
+		043D1CF61CFD7308004063E2 /* USCommonListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCommonListTableCell.m; sourceTree = "<group>"; };
+		043D1CF81CFD73DA004063E2 /* USCommonListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USCommonListController.h; sourceTree = "<group>"; };
+		043D1CF91CFD73E3004063E2 /* USCommonListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCommonListController.m; sourceTree = "<group>"; };
+		044095641CFE73E500DC6ABC /* USCommonBankCardListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCommonBankCardListViewController.h; sourceTree = "<group>"; };
+		044095651CFE73E500DC6ABC /* USCommonBankCardListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCommonBankCardListViewController.m; sourceTree = "<group>"; };
+		044095671CFE749000DC6ABC /* USBankCardListCommonDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USBankCardListCommonDelegate.h; sourceTree = "<group>"; };
+		044095681CFE8A3200DC6ABC /* USRebackMsgCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USRebackMsgCodeViewController.h; sourceTree = "<group>"; };
+		044095691CFE8A3200DC6ABC /* USRebackMsgCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USRebackMsgCodeViewController.m; sourceTree = "<group>"; };
+		0440956B1CFEB28F00DC6ABC /* USDeleBindCardMsgCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USDeleBindCardMsgCodeViewController.h; sourceTree = "<group>"; };
+		0440956C1CFEB28F00DC6ABC /* USDeleBindCardMsgCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USDeleBindCardMsgCodeViewController.m; sourceTree = "<group>"; };
 		0471FED51C833BD500E89EB2 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 		049445AA1CB8D3E900165EAD /* USHtmlLoadViewInsideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USHtmlLoadViewInsideController.h; sourceTree = "<group>"; };
 		049445AB1CB8D3E900165EAD /* USHtmlLoadViewInsideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USHtmlLoadViewInsideController.m; sourceTree = "<group>"; };
@@ -516,6 +535,7 @@
 		04AA71071C7DA7160076CF8E /* USCommentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCommentListViewController.m; sourceTree = "<group>"; };
 		04AA71091C7DA84A0076CF8E /* USCommentTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCommentTableCell.h; sourceTree = "<group>"; };
 		04AA710A1C7DA84A0076CF8E /* USCommentTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCommentTableCell.m; sourceTree = "<group>"; };
+		04AB36971CFDD9B600080681 /* USListCommonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USListCommonDelegate.h; sourceTree = "<group>"; };
 		04BEDA761C7ADEA600BE77F2 /* USSayHelloViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USSayHelloViewController.h; sourceTree = "<group>"; };
 		04BEDA771C7ADEA600BE77F2 /* USSayHelloViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USSayHelloViewController.m; sourceTree = "<group>"; };
 		04C148541CA2E09F00D7A6E7 /* meCellData副本.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "meCellData副本.plist"; sourceTree = "<group>"; };
@@ -1496,6 +1516,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		043D1CEE1CFD70EC004063E2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				04AB36931CFDD74600080681 /* CommonListDelegate */,
+				043D1CEF1CFD7164004063E2 /* Controller */,
+				043D1CF01CFD7164004063E2 /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		043D1CEF1CFD7164004063E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				044095641CFE73E500DC6ABC /* USCommonBankCardListViewController.h */,
+				044095651CFE73E500DC6ABC /* USCommonBankCardListViewController.m */,
+				043D1CF81CFD73DA004063E2 /* USCommonListController.h */,
+				043D1CF91CFD73E3004063E2 /* USCommonListController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		043D1CF01CFD7164004063E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				043D1CF51CFD72FF004063E2 /* USCommonListTableCell.h */,
+				043D1CF61CFD7308004063E2 /* USCommonListTableCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04AB36931CFDD74600080681 /* CommonListDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				044095671CFE749000DC6ABC /* USBankCardListCommonDelegate.h */,
+				04AB36971CFDD9B600080681 /* USListCommonDelegate.h */,
+			);
+			path = CommonListDelegate;
+			sourceTree = "<group>";
+		};
 		04C7D3A21C81E5680002115A /* LibBPush */ = {
 			isa = PBXGroup;
 			children = (
@@ -1629,6 +1688,7 @@
 		D84EE1181B91A73A00D27DD4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				043D1CEE1CFD70EC004063E2 /* Common */,
 				D8AFB1161C3A57B20058C6F0 /* Merchant */,
 				D85038381BB19D5500703998 /* VaughanCard */,
 				D84EE1191B91A73A00D27DD4 /* Account */,
@@ -1695,10 +1755,16 @@
 				04FF4BDF1CA4309100AFAF9C /* USMyTicketViewController.h */,
 				04FF4BE01CA4309100AFAF9C /* USMyTicketViewController.m */,
 				D88AB2CC1BA07A76006E652A /* USModifyPayPwdViewController.m */,
+				044095681CFE8A3200DC6ABC /* USRebackMsgCodeViewController.h */,
+				0440956B1CFEB28F00DC6ABC /* USDeleBindCardMsgCodeViewController.h */,
+				0440956C1CFEB28F00DC6ABC /* USDeleBindCardMsgCodeViewController.m */,
+				044095691CFE8A3200DC6ABC /* USRebackMsgCodeViewController.m */,
 				D88AB2CE1BA08228006E652A /* USBankCardListViewController.h */,
 				D88AB2CF1BA08228006E652A /* USBankCardListViewController.m */,
 				D8528D581BA0AF39003B915A /* USBindBankCardViewController.h */,
 				D8528D591BA0AF39003B915A /* USBindBankCardViewController.m */,
+				043305B61CFC8C840090F7ED /* USBindBankHuifuAccountViewController.h */,
+				043305B71CFC8C840090F7ED /* USBindBankHuifuAccountViewController.m */,
 				D8CD5B131BA1EDF3002F725A /* USMyIncomeViewController.h */,
 				D8CD5B141BA1EDF3002F725A /* USMyIncomeViewController.m */,
 				D8CD5B161BA20570002F725A /* USAccountBlanceViewController.h */,
@@ -3582,6 +3648,7 @@
 				D85787911BE1279100A5B285 /* SDWebImageDownloaderOperation.m in Sources */,
 				D8E86A2C1C1C07AC00A6D05F /* ZXUPCAReader.m in Sources */,
 				D8E869F11C1C07AC00A6D05F /* ZXDataMatrixSymbolInfo.m in Sources */,
+				0440956A1CFE8A3200DC6ABC /* USRebackMsgCodeViewController.m in Sources */,
 				D8AFB1421C3A5FF70058C6F0 /* USSnatchTableViewCell.m in Sources */,
 				D8E86A691C1C07AC00A6D05F /* ZXingWrapper.m in Sources */,
 				D8E869A61C1C07AC00A6D05F /* ZXGeoResultParser.m in Sources */,
@@ -3597,6 +3664,7 @@
 				D84EE1661B91A73A00D27DD4 /* HYNews.m in Sources */,
 				D88D549A1C40AAB600A269A8 /* USInviteView.m in Sources */,
 				D8E86A441C1C07AC00A6D05F /* ZXPDF417BarcodeMatrix.m in Sources */,
+				044095661CFE73E500DC6ABC /* USCommonBankCardListViewController.m in Sources */,
 				D8E869AB1C1C07AC00A6D05F /* ZXProductResultParser.m in Sources */,
 				D8C00A891C4202CA00066F07 /* USMyJoinInitView.m in Sources */,
 				D84EE1631B91A73A00D27DD4 /* USAuthViewController.m in Sources */,
@@ -3625,6 +3693,7 @@
 				D84EE1621B91A73A00D27DD4 /* USAccountView.m in Sources */,
 				D8E86A6B1C1C07AC00A6D05F /* MyQRViewController.m in Sources */,
 				D8E869BB1C1C07AC00A6D05F /* ZXWifiParsedResult.m in Sources */,
+				043D1CFA1CFD73E3004063E2 /* USCommonListController.m in Sources */,
 				D8E869C31C1C07AC00A6D05F /* ZXGenericGF.m in Sources */,
 				D8E86A541C1C07AC00A6D05F /* ZXQRCodeFormatInformation.m in Sources */,
 				D823E4181B96174800A4E043 /* USUIViewTool.m in Sources */,
@@ -3798,6 +3867,7 @@
 				D84EE0F51B91A50100D27DD4 /* main.m in Sources */,
 				D85038521BB19D5500703998 /* USFrentlyQuestionViewController.m in Sources */,
 				D88DAA321C3FBE970053465E /* USXRankView.m in Sources */,
+				043305B81CFC8C840090F7ED /* USBindBankHuifuAccountViewController.m in Sources */,
 				D8989EF41BADA83400F3D366 /* USUserService.m in Sources */,
 				D8E86A671C1C07AC00A6D05F /* ZXMultiFormatReader.m in Sources */,
 				D8E869ED1C1C07AC00A6D05F /* ZXDataMatrixEdifactEncoder.m in Sources */,
@@ -3807,6 +3877,7 @@
 				D8E869931C1C07AC00A6D05F /* ZXAztecSimpleToken.m in Sources */,
 				D8E869B21C1C07AC00A6D05F /* ZXTelResultParser.m in Sources */,
 				D8E86A481C1C07AC00A6D05F /* ZXPDF417HighLevelEncoder.m in Sources */,
+				0440956D1CFEB28F00DC6ABC /* USDeleBindCardMsgCodeViewController.m in Sources */,
 				D8AFB1281C3A57B20058C6F0 /* USNearProfZoneViewController.m in Sources */,
 				D8E869FD1C1C07AC00A6D05F /* ZXAbstractExpandedDecoder.m in Sources */,
 				D8989EFD1BADB21600F3D366 /* MBProgressHUD.m in Sources */,
@@ -3877,6 +3948,7 @@
 				D8E86A231C1C07AC00A6D05F /* ZXEAN8Reader.m in Sources */,
 				D8E869A41C1C07AC00A6D05F /* ZXExpandedProductResultParser.m in Sources */,
 				D851200B1BC4305F00309281 /* USWebTool.m in Sources */,
+				043D1CF71CFD7308004063E2 /* USCommonListTableCell.m in Sources */,
 				D85132681BC0063B006DE9E9 /* InvalidTooltipView.m in Sources */,
 				D8AFB1411C3A5FF70058C6F0 /* USPersonZoneTableViewCell.m in Sources */,
 				D84EE1641B91A73A00D27DD4 /* USDiscoverTableViewController.m in Sources */,

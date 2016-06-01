@@ -26,6 +26,10 @@
 //服务费
 @property(nonatomic,strong)UILabel *chargeFeeLabel ;
 @property(nonatomic,assign)CGFloat chargeFee ;
+
+//滞纳金
+@property(nonatomic,strong)UILabel *passFeeLabel ;
+@property(nonatomic,assign)CGFloat passFee ;
 //总额
 @property(nonatomic,strong)UILabel *sumMoneyLabel ;
 @property(nonatomic,assign)CGFloat sumoney ;
@@ -101,7 +105,7 @@
  创建分类型的费用
  **/
 -(void)createTypefee{
-    CGFloat bgHeight = 165 ;
+    CGFloat bgHeight = 190 ;
     UIView *bgview = [[UIView alloc] initWithFrame:CGRectMake(0, _height+20, kAppWidth, bgHeight) ];
     [bgview setBackgroundColor:[UIColor whiteColor]] ;
     //手续费
@@ -151,11 +155,26 @@
     [bgview addSubview:_chargeFeeLabel] ;
     
     
+    //滞纳金
+    label = [USUIViewTool createUILabelWithTitle:@"滞纳金：" fontSize:14 color:HYCTColor(137, 138, 145) heigth:labelHight] ;
+    [label setX:10] ;
+    [label setY:_chargeFeeLabel.y+_chargeFeeLabel.height+ 10] ;
+    [label setWidth:80] ;
+    [bgview addSubview:label] ;
+    
+    _passFeeLabel = [USUIViewTool createUILabelWithTitle:defaultvalue fontSize:14 color:[UIColor blackColor] heigth:labelHight];
+    [_passFeeLabel setX:_thirdFeeLabel.x] ;
+    [_passFeeLabel setY:label.y];
+    [_passFeeLabel setWidth:_thirdFeeLabel.width] ;
+    [_passFeeLabel setTextAlignment:NSTextAlignmentRight] ;
+    [bgview addSubview:_passFeeLabel] ;
+    
+    
     //线条
     UIView *lineview = [USUIViewTool createLineView] ;
     [lineview setWidth:kAppWidth-20] ;
     [lineview setX:10] ;
-    [lineview setY:_chargeFeeLabel.y+_chargeFeeLabel.height +20] ;
+    [lineview setY:_passFeeLabel.y+_passFeeLabel.height +20] ;
     [bgview addSubview:lineview] ;
     
     
@@ -263,6 +282,9 @@
         //服务费
         _chargeFee = [da[@"borrow_charge_rate"] floatValue] ;
         _chargeFeeLabel.text = [NSString stringWithFormat:@"¥ %@",da[@"borrow_charge_rate"]];
+        //滞纳金
+        _passFee = [da[@"weiyue_money_rate"] floatValue] ;
+        _passFeeLabel.text =  [NSString stringWithFormat:@"¥ %@",da[@"weiyue_money_rate"]];
         //总金额
         _sumoney = [da[@"sum_total"] floatValue] ;
         _sumMoneyLabel.text=[NSString stringWithFormat:@"¥ %@",da[@"sum_total"]];
@@ -355,7 +377,7 @@
 
 
 /**
- 改变值
+ 改变值--第三方不参加运算
  **/
 -(void)changeValues{
     
@@ -367,11 +389,11 @@
         name = [NSString stringWithFormat:@"%@ >",_ticketData[@"name"]] ;
         ticketMoney = [_ticketData[@"money"] floatValue] ;
     }
-    surplus = _thirdMoney + _chargeFee + _moneyFee - ticketMoney ;
+    surplus =  _chargeFee + _moneyFee +_passFee - ticketMoney ;
     if (surplus < 0) {
         surplus = 0 ;
     }
-    _sumoney = _money +surplus ;
+    _sumoney = _money +surplus +_thirdMoney;
     
     NSString *sumStr = [NSString stringWithFormat:@"¥ %.2f",_sumoney] ;
     [_sumMoneyLabel setText:sumStr] ;

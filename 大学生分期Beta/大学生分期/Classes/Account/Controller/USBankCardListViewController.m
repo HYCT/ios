@@ -10,6 +10,7 @@
 #import "USBindBankHuifuAccountViewController.h"
 #import "USBindBankCardViewController.h"
 #import "USBankCardCell.h"
+#import "USDeleBindCardMsgCodeViewController.h"
 
 @interface USBankCardListViewController()
 @property (nonatomic,strong)UIView *footer;
@@ -114,39 +115,10 @@
     }
     [cell setDateWithDic:_bankCardList[indexPath.section]];
     
-    //实例化长按手势监听
-    UILongPressGestureRecognizer *longPress =
-    [[UILongPressGestureRecognizer alloc] initWithTarget:self
-                                                  action:@selector(handleTableviewCellLongPressed:)];
-    //代理
-    longPress.delegate = self;
-    longPress.minimumPressDuration = 1.0;
-    //将长按手势添加到需要实现长按操作的视图里
-    [cell addGestureRecognizer:longPress];
-    //[longPress release];
-    //[cell release];
     return cell;
 }
 
-//长按事件的实现方法
-- (void) handleTableviewCellLongPressed:(UILongPressGestureRecognizer *)gestureRecognizer {
-    //开始长按事件
-    if (gestureRecognizer.state ==
-        UIGestureRecognizerStateBegan) {
-        NSLog(@"UIGestureRecognizerStateBegan");
-        
-    }
-    if (gestureRecognizer.state ==
-        UIGestureRecognizerStateChanged) {
-        NSLog(@"UIGestureRecognizerStateChanged");
-    }
-    
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        NSLog(@"UIGestureRecognizerStateEnded");
-        
-    }
-    
-}
+
 
 //点击某一行时候触发的事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -162,21 +134,12 @@
     if (buttonIndex==1) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         long index = indexPath.section ;
-        //NSLog(@"index %ld",index) ;
         NSDictionary *row = _bankCardList[index];
-        //NSLog(@"index %@",row[@"id"]) ;
-        //NSString *rowid = @"ssssss";
-        NSString *rowid = row[@"id"] ;
-        [USWebTool POSTWIthTip:@"bindbankcardcilent/deleteCustomerBindBank.action" showMsg:@"正在删除银行卡..." paramDic:@{@"id":rowid} success:^(NSDictionary *dic) {
-            //重新设置用户
-            [USUserService saveAccount:[USAccount accountWithDic:dic[@"data"]]];
-            //重新加载银行卡
-            [self loadBankCardlist] ;
-            //_bankCardList = dic[@"data"];
-            //[_tableView reloadData];
-        } failure:^(id data) {
-            
-        }];
+        HYLog(@"card_data%@",row) ;
+        USDeleBindCardMsgCodeViewController *controller = [[USDeleBindCardMsgCodeViewController alloc]init] ;
+        controller.bindcard_id = row[@"id"] ;
+        controller.card_mobile = row[@"card_mobile"] ;
+        [self.navigationController pushViewController:controller animated:YES] ;
         
     }
 }
