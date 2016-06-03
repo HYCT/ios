@@ -69,7 +69,7 @@
     _nameField.delegate = self;
     _nameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入姓名" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:kCommonFontSize_15]}];
     _nameField.textAlignment = NSTextAlignmentRight;
-    _nameField.enabled = YES;
+    _nameField.enabled = NO;
     [bgview addSubview:_nameField];
     line = [self createLine:_nameTipLB.y+_nameTipLB.height+kLabelPadding*0.5];
     line.frame = CGRectMake(kTipRightMargin, line.y, kAppWidth-kTipRightMargin*2, line.height);
@@ -80,7 +80,7 @@
     _idCardField = [[UITextField alloc]initWithFrame:CGRectMake(kTipLeftMargin+width+5, _nameTipLB.y, kAppWidth-kTipLeftMargin-width-kTipRightMargin-5, kLabelHeight)];
     _idCardField.delegate = self;
     _idCardField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入身份证号码" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:kCommonFontSize_15]}];
-    _idCardField.enabled = YES;
+    _idCardField.enabled = NO;
     _idCardField.textAlignment = NSTextAlignmentRight;
     [bgview addSubview:_idCardField];
     line = [self createLine:bgview.height-1];
@@ -100,6 +100,7 @@
     _telephoneField = [[UITextField alloc]initWithFrame:CGRectMake(kTipLeftMargin+width+5, _nameTipLB.y, kAppWidth-kTipLeftMargin-width-kTipRightMargin-5, kLabelHeight)];
     _telephoneField.delegate = self;
     _telephoneField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入电话号码" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:kCommonFontSize_15]}];
+    _telephoneField.enabled = NO ;
     _telephoneField.textAlignment = NSTextAlignmentRight;
     _telephoneField.keyboardType = UIKeyboardTypeNumberPad;
     [bgview1 addSubview:_telephoneField];
